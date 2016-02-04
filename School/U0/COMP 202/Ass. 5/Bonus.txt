@@ -1,0 +1,8 @@
+name = Canon {The First 17 seconds of https://www.youtube.com/watch?v=rNsgHMklBW0}
+bpm = 100
+instrument = 0
+track = 4C<4G>4A<4E4F4C4F4G
+instrument = 0
+track = PEG>C<PDG>B<PCE>A<PBEGPCF>A<PCEGPCF>A<PDG>B<
+
+

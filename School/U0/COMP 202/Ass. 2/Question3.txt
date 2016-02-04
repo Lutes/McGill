@@ -1,0 +1,5 @@
+a) Technically the code would compile, but would not output what the programmer likely wanted. Rather than printing "hello" 20 times, "hello" is printed infinitely because the value of x is set to one and never changed.  
+b)aW * 263---- * 21251 * 0 * 0.5 (* Representes a new line)
+c)1)int 2)String 3)String 4)int 5)double 6)String
+d)8 * 6 * 5 * 7 * 8 * 3 * 3 * 6 * 7 * 3 * 5 * 8 * = 609638400
+e)1.5160975859E10

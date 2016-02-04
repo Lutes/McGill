@@ -1,0 +1,12 @@
+!#/bin.bash
+
+xdg-open http://unix.stackexchange.com/questions/986/what-are-the-pros-and-cons-of-vim-and-emacs &
+
+PS1="\u\w>>"
+alias ll="ls -a -l"
+who | grep daniel.lutes 
+who | grep holden.koivu
+who | grep josh.liu 
+
+date >> MyLoginHistory.txt
+

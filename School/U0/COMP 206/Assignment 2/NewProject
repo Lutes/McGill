@@ -1,0 +1,72 @@
+#!/bin/bash
+
+################
+#Name:Daniel Lutes
+#Student Num:260609221
+#Date:20/02/15
+################
+
+#Checks how many args there are
+if [ "$#" -eq "2" ]
+then
+	if [ -d $1 ]
+	then
+		#Makes project dir
+		echo "2 "
+		cd $1;mkdir $2
+		#Makes sub dirs
+		cd $2;mkdir Docs;mkdir Source;mkdir Backup;mkdir Archive
+	 	
+	else
+		echo "Your path is malformed. Type in: NewProject path project_name"
+		exit
+	fi		
+
+elif [ "$#" -eq "1" ]
+then
+	if [ -d $1 ]
+	then
+		echo "Your project name is missing. Type in: NewProject path project_name"
+		exit
+	else
+		echo "1"
+		#Makes project dir
+		mkdir $1
+		#Makes sub dirs
+		cd $1;mkdir Docs;mkdir Source;mkdir Backup;mkdir Archive
+		
+	fi
+elif [ "$#" -gt 2 ]
+then
+	echo "Your project name must be one word. Type in: NewProject path project_name"
+	exit
+else
+	echo "You didn't input any args. Type in: NewProject path project_name"
+	exit
+fi
+
+#Enters into the Source dir
+cd Source
+
+# Makes compile script
+echo '#!/bin/bash' >> "compile"
+echo '> errors.txt' >> "compile"
+echo 'if [ "$1" == "-o" ]; then' >> "compile"
+echo '	if [ -z "$3" ]; then' >> "compile"
+echo ' 		echo "You are missing file names. Type in: compile -o executable_name file_names(s)" >> errors.txt' >> "compile"
+echo '	else' >> "compile"
+echo '		cp "${@:3}" "../backup" 2>> errors.txt' >> "compile"
+echo '	fi' >> "compile"
+echo '	gcc "$1" "$2" "${@:3}" 2>> errors.txt' >> "compile"
+echo 'else' >> "compile"
+echo '	if [ -z "$1" ]; then' >> "compile"
+echo '		echo "You are missing file names. Type in: compile -o executable_name file_names(s)" >> errors.txt' >> "compile"
+echo '	else' >> "compile"
+echo '		cp "${@:1}" "../backup" 2>> errors.txt' >> "compile"
+echo '	fi' >> "compile"
+echo '	gcc "${@:1}" 2>> errors.txt' >> "compile"
+echo 'fi' >> "compile"
+echo 'more errors.txt' >> "compile"
+
+# Allows compile to be exicuted
+chmod u+x "compile"

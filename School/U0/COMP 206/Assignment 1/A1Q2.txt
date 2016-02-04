@@ -1,0 +1,9 @@
+1. 
+finger | grep -i le.*pts > fingeredUsers.txt
+
+2.
+mkdir Source
+mkdir Backup Docs 
+
+mv *.doc Source/Docs; mv *.java Source
+
